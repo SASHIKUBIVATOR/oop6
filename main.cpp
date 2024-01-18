@@ -110,3 +110,48 @@ public:
 
     virtual void doHobby() = 0;
 };
+
+// Класс WhistleMan, наследующийся от Student и Person
+class WhistleMan : public Student, public Person {
+public:
+    // Конструктор класса whistleMan для полей Student, Person
+    WhistleMan(string n, int a, string s, string c) : Student(n, a, s), Person(c) {}
+
+    void fighteverybody() {
+        cout << getName() << " дерётся со всеми\n";
+    }
+
+    void doHobby() override {
+        cout << getName() << " играет в баскетболл\n";
+    }
+
+    void goesToSchool() override {
+        cout << "не любит ходить в вузик\n";
+    }
+};
+
+int main() {
+    // Создание объектов различных классов
+    Human person("Лешик", 19);
+    Student student("Сашик", 19, "ДВФУ");
+    Teacher teacher("МАО", 35, "матанализ");
+    Coresh coresh("Гриша", 19, "математикой");
+
+    // Вывод свойств объектов различных классов
+    cout << "Человек: " << person.getName() << ", возраст: " << person.getAge() << endl;
+    cout << "Студент: " << student.getName() << ", возраст: " << student.getAge()
+         << ", Университет: " << student.getUniversity() << endl;
+    cout << "Преподаватель: " << teacher.getName() << ", возраст: " << teacher.getAge()
+         << ", Subject: " << teacher.getSubject() << endl;
+    cout << "Кореш: " << coresh.getName() << ", возраст: " << coresh.getAge()
+         << ", любит заниматься: " << coresh.getHobby() << endl;
+
+    // Создание объекта whistleMan и вывод его свойств
+    WhistleMan whistleMan("Антон", 19, "ИМКТ", "куряга");
+    cout << whistleMan.getName() << " - " << whistleMan.getCharacter() << endl;
+    whistleMan.goesToSchool();
+    whistleMan.fighteverybody();
+    whistleMan.doHobby();
+
+    return 0;
+}
