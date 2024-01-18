@@ -93,3 +93,20 @@ public:
     }
 };
 
+class Person {
+private:
+    string character;
+
+public:
+    Person(string c) : character(c) {}
+
+    string getCharacter() {
+        return character;
+    }
+
+    void setCharacter(string _character) {
+        character = _character;
+    }
+
+    virtual void doHobby() = 0;
+};
