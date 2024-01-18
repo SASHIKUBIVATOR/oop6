@@ -54,3 +54,22 @@ public:
     }
 };
 
+
+// Класс Teacher, наследующийся от Human
+class Teacher : public Human {
+private:
+    string subject;
+
+public:
+    // Конструктор класса Teacher для полей Human и subject
+    Teacher(string n, int a, string s) : Human(n, a), subject(s) {}
+
+    // Getter и Setter для свойства subject
+    string getSubject() const {
+        return subject;
+    }
+
+    void setSubject(const string& s) {
+        subject = s;
+    }
+};
