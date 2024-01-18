@@ -73,3 +73,23 @@ public:
         subject = s;
     }
 };
+
+// Класс Coresh, наследующийся от Human
+class Coresh : public Human {
+private:
+    string hobby;
+
+public:
+    // Конструктор класса Coresh для полей Human и hobby
+    Coresh(string n, int a, string h) : Human(n, a), hobby(h) {}
+
+    // Getter и Setter для свойства hobby
+    string getHobby() const {
+        return hobby;
+    }
+
+    void setHobby(const string& h) {
+        hobby = h;
+    }
+};
+
